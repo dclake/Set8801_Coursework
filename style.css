@@ -1,5 +1,9 @@
 body{
-    background: #007bff;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #ffffff;
 }
 .topnav {
     background-color: #333;
