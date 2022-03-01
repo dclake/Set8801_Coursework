@@ -35,3 +35,14 @@ footer{
     background-color: #e1fa04;
     color: rgb(0, 0, 0);
   }
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
