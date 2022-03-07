@@ -1,6 +1,6 @@
 body{
     margin-top: 0px;
-    padding: 5%;
+    padding: 10%;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: auto;
     margin-right: auto;
@@ -11,74 +11,3 @@ footer{
   clear: both;
   width:100%
 }
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: rgb(0, 79, 248);
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #e1fa04;
-    color: rgb(0, 0, 0);
-  }
-  .container {
-    padding: 5% ;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container > * {
-    width: 100%;
-  }
-  
-  .choice-container {
-    display: flex;
-    margin-bottom: 0.5rem;
-    width: 90%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    border: 0.1rem solid rgb(86, 165, 235, 0.25);
-    background-color: white;
-  }
-  
-  .choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-  }
-  
-  .choice-prefix {
-    padding: 1.5rem 2.5rem;
-    background-color: #56a5eb;
-    color: white;
-  }
-  .choice-text {
-    padding: 1.5rem;
-  }
-.flex-container {
-    display: flex;
-    background-color: DodgerBlue;
-  }
-  
-  .flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 10px;
-    font-size: 30px;
-  }
