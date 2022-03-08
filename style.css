@@ -20,7 +20,6 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
 h1 {
   width: 100%;
   max-width: 960px;
@@ -32,6 +31,10 @@ h1 {
 }
 .main {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .home_button_containter{
     display: flex;
@@ -55,8 +58,13 @@ h1 {
   background-color: #ffffff;
   color: #000000;
 }
-
-
+.quiz-container{
+  width: 80%;
+  background: #ffffff;
+  border-radius: 5px;
+  text-align: left;
+  padding: 0 10% 0;
+}
 
 #footer {
   position:relative;
