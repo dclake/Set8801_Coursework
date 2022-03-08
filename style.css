@@ -10,6 +10,9 @@ body{
     background-image: linear-gradient(to bottom right, blue, yellow);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+
 
 }
 img {
@@ -24,19 +27,23 @@ img {
 h1 {
   width: 100%;
   max-width: 960px;
-  margin: 30px auto 30px;
+  margin: 20px auto 30px;
   color: white;
   text-align: center;
   font-size: 3rem;
-  line-height: 3rem;
-  text-shadow: black;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 
-footer {
-  width: 60%;
-  max-width: 960px;
-  margin: 0 auto;
-  font-size: 1rem;
-  color: #f29baa;
+
+
+#footer {
+  position:absolute;
+  text-align: center;
+  border: #000000 10px;
+  border-radius: 5px;
+  bottom:0;
+  width:80%;
+  height:60px;   /* Height of the footer */
+  background:rgb(255, 255, 255);
 }
