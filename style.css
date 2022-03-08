@@ -47,7 +47,8 @@ h1 {
   margin: 10px;
   text-align: center;
   font-size: 16px;
-  width: 260px;
+  font-weight: bold;
+  width: 270px;
   
 }
 .home_button:hover{
