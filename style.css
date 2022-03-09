@@ -77,9 +77,20 @@ h1 {
   text-align: large;
   font-weight: bold;
   font-size: x-large;
-
 }
-
+.choice-container{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.choice{
+  text-align: center;
+  font-weight: bold;
+  border: #000000;
+  border-style: solid;
+  border-width: 2px;
+  padding: 10 10 10;
+  margin-bottom: 10px;
+}
 
 #footer {
   position:relative;
