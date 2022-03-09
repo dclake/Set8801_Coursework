@@ -66,6 +66,14 @@ h1 {
   padding: 0 10% 0;
   box-shadow:2px 2px 4px #000000;
 }
+.question-number{
+  text-align: right;
+  font-weight: bold;
+  padding: 10px;
+
+
+}
+
 
 #footer {
   position:relative;
