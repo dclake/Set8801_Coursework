@@ -83,12 +83,16 @@ h1 {
   margin-bottom: 20px;
 }
 .choice{
-  text-align: left;
+  min-height: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  vertical-align: middle;
   font-weight: bold;
+  text-indent: 1em;
   border: #000000;
   border-style: solid;
   border-radius: 5px;
-
   padding: 10 10 10;
   margin-bottom: 10px;
 }
