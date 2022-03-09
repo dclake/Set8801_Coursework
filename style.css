@@ -68,9 +68,15 @@ h1 {
 }
 .question-number{
   text-align: right;
+  font-size: larger;
   font-weight: bold;
-  padding: 10px;
-
+  padding: 20px 0 0;
+  
+}
+.question-text{
+  text-align: large;
+  font-weight: bold;
+  font-size: x-large;
 
 }
 
