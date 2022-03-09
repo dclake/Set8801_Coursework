@@ -63,22 +63,24 @@ h1 {
   background: #ffffff;
   border-radius: 20px;
   text-align: left;
-  padding: 0 10% 0;
+
   box-shadow:2px 2px 4px #000000;
 }
 .question-number{
   text-align: right;
   font-size: larger;
   font-weight: bold;
-  padding: 20px 0 0;
+  padding: 20px 20px 0;
   
 }
 .question-text{
+  padding: 0 10% 0;
   text-align: large;
   font-weight: bold;
   font-size: x-large;
 }
 .choice-container{
+  padding: 0 10% 0;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -95,6 +97,16 @@ h1 {
   border-radius: 5px;
   padding: 10 10 10;
   margin-bottom: 10px;
+}
+.quiz-buttons{
+  background-color: blue;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  height: 40px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
 }
 
 #footer {
