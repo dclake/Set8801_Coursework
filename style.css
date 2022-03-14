@@ -98,6 +98,10 @@ h1 {
   padding: 10 10 10;
   margin-bottom: 10px;
 }
+.choice:hover{
+  cursor: pointer;
+  background-color: yellow;
+}
 .quiz-buttons{
   background-color: blue;
   color: #ffffff;
