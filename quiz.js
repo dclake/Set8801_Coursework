@@ -36,10 +36,22 @@ let questions = [
     }
 ]
 showQuestions();
+showChoices();
+function showChoices(){
+    getChoices();
+}
+
 function showQuestions (){
     var div = document.getElementById('question_text');
-    question = questions[0].question
+    question = questions[0].question;
     div.innerHTML += question;
+};
+function getChoices(){
+    var div = document.getElementById('choice_text');
+    choice_text = questions[1].choices[0];
+    console.log(choice_text);
+    div.innerHTML += choice_text;
 }
+
 
 
