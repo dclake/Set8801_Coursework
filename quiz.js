@@ -1,5 +1,9 @@
 console.log("Hello");
 
+let question_count = 3;
+let question_number = 1;
+
+
 let questions = [
     {
         id: 1,
@@ -35,8 +39,17 @@ let questions = [
         ]
     }
 ]
+questionCounter();
 showQuestions();
 showChoices();
+
+
+function questionCounter(){
+    var div = document.getElementById("question_number");
+    count = question_number + "/" + question_count;
+    div.innerHTML += count;
+}
+
 function showChoices(){
     getChoices();
 }
@@ -52,6 +65,7 @@ function getChoices(){
     console.log(choice_text);
     div.innerHTML += choice_text;
 }
+
 
 
 
