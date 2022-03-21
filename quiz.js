@@ -41,6 +41,7 @@ let questions = [
 ]
 questionCounter();
 showQuestions();
+
 showChoices();
 
 
@@ -60,12 +61,13 @@ function showQuestions (){
     div.innerHTML += question;
 };
 function getChoices(){
+    let choice_text="";
+    for (let i = 0; i < questions[1].choices.length; i++) {
     var div = document.getElementById('choice_text');
-    choice_text = questions[1].choices[0];
+    choice_text = '<div class="choice">' + questions[1].choices[i] + '</span>' + '</div>';
     console.log(choice_text);
     div.innerHTML += choice_text;
 }
-
-
+}
 
 
