@@ -2,6 +2,7 @@ console.log("Hello");
 
 let question_count = 3;
 let question_number = 1;
+let current_question = question_number-1;
 
 
 let questions = [
@@ -62,9 +63,9 @@ function showQuestions (){
 };
 function getChoices(){
     let choice_text="";
-    for (let i = 0; i < questions[1].choices.length; i++) {
+    for (let i = 0; i < questions[current_question].choices.length; i++) {
     var div = document.getElementById('choice_text');
-    choice_text = '<div class="choice">' + questions[1].choices[i] + '</span>' + '</div>';
+    choice_text = '<div class="choice">' + questions[current_question].choices[i] + '</span>' + '</div>';
     console.log(choice_text);
     div.innerHTML += choice_text;
 }
