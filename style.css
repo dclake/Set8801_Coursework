@@ -103,6 +103,13 @@ h1 {
   cursor: pointer;
   background-color: yellow;
 }
+.correct{
+  background-color: green;
+}
+.incorrect{
+  background-color: red;
+}
+
 .quiz-buttons{
   background-color: blue;
   color: #ffffff;

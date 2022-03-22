@@ -3,13 +3,19 @@ console.log("Hello");
 let question_count = 3;
 let question_number = 1;
 let current_question = question_number-1;
+var click;
+
+
+
+var answers = [];
+var choice = '';
 
 
 let questions = [
     {
         id: 1,
         question: "Saint Lucia is a ________?",
-        answer: "Island",
+        answer: 2,
         choices: [
             "Planet",
             "Island",
@@ -44,7 +50,26 @@ questionCounter();
 showQuestions();
 
 showChoices();
-
+var A = document.getElementById("ID1");
+var B = document.getElementById("ID2");
+var C = document.getElementById("ID3");
+var D = document.getElementById("ID3");
+A.onclick = function() {
+    choice = 1;
+    checkAnswer(choice);
+}
+B.onclick = function() {
+    choice = 2;
+    checkAnswer(choice);
+}
+C.onclick = function() {
+        choice = 3;
+        checkAnswer(choice);
+}
+D.onclick = function() {
+            choice = 1;
+            checkAnswer(choice);
+}
 
 function questionCounter(){
     var div = document.getElementById("question_number");
@@ -54,6 +79,10 @@ function questionCounter(){
 
 function showChoices(){
     getChoices();
+    console.log("running");
+  console.log(click);
+
+    
 }
 
 function showQuestions (){
@@ -63,12 +92,53 @@ function showQuestions (){
 };
 function getChoices(){
     let choice_text="";
+    let data_number=1;
+    
     for (let i = 0; i < questions[current_question].choices.length; i++) {
+        console.log(data_number);
     var div = document.getElementById('choice_text');
-    choice_text = '<div class="choice">' + questions[current_question].choices[i] + '</span>' + '</div>';
-    console.log(choice_text);
+    choice_text = '<div id = ID'+ data_number +'> <li class="choice "'+ 'data-number='  +data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
     div.innerHTML += choice_text;
+    data_number = data_number+1;
 }
+//document.getElementById("choice_text").addEventListener("click", checkAnswer);
+
+}
+
+
+    // console.log('foo bar');
+
+    // document.querySelector('#ID1').style.backgroundColor = "red";
+    document.querySelector('#choice-check').innerHTML = 'choice is '+choice;
+    console.log(choice);
+    // return choice;
+
+console.log(choice);
+
+function checkAnswer(choice){
+    
+    // var choice = 0;
+
+    // console.log(answers);
+
+    if(choice == 2) {
+        console.log('correct');
+    } else {
+        console.log('wrong');
+    }
+    
+    // A.onclick = function() {
+        // console.log('foo bar');
+        // choice = 1;
+        // document.querySelector('#ID1').style.backgroundColor = "red";
+
+        // console.log(choice);
+        // return choice;
+
+    // }
+    // console.log(choice);
+
+    
 }
 
 
