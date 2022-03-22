@@ -109,8 +109,8 @@ function getChoices(){
     // console.log('foo bar');
 
     // document.querySelector('#ID1').style.backgroundColor = "red";
-    document.querySelector('#choice-check').innerHTML = 'choice is '+choice;
-    console.log(choice);
+    // document.querySelector('#choice-check').innerHTML = 'choice is '+choice;
+    // console.log(choice);
     // return choice;
 
 console.log(choice);
