@@ -53,7 +53,7 @@ showChoices();
 var A = document.getElementById("ID1");
 var B = document.getElementById("ID2");
 var C = document.getElementById("ID3");
-var D = document.getElementById("ID3");
+var D = document.getElementById("ID4");
 A.onclick = function() {
     choice = 1;
     checkAnswer(choice);
@@ -67,7 +67,7 @@ C.onclick = function() {
         checkAnswer(choice);
 }
 D.onclick = function() {
-            choice = 1;
+            choice = 4;
             checkAnswer(choice);
 }
 
@@ -119,26 +119,20 @@ function checkAnswer(choice){
     
     // var choice = 0;
 
-    // console.log(answers);
+    console.log(choice);
+    
 
     if(choice == 2) {
         console.log('correct');
+        buttonClicked = "#ID" + choice;
+        document.querySelector(buttonClicked).style.backgroundColor = "green"
     } else {
         console.log('wrong');
+        buttonClicked = "#ID" + choice;
+        document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
     
-    // A.onclick = function() {
-        // console.log('foo bar');
-        // choice = 1;
-        // document.querySelector('#ID1').style.backgroundColor = "red";
-
-        // console.log(choice);
-        // return choice;
-
-    // }
-    // console.log(choice);
-
-    
+   
 }
 
 
