@@ -55,21 +55,33 @@ var A = document.getElementById("ID1");
 var B = document.getElementById("ID2");
 var C = document.getElementById("ID3");
 var D = document.getElementById("ID4");
+
+function nullButtons(){
+    A.onclick = null;
+    B.onclick = null;
+    C.onclick = null;
+    D.onclick = null;
+}
 A.onclick = function() {
     choice = 1;
     checkAnswer(choice);
+    nullButtons();
+
 }
 B.onclick = function() {
     choice = 2;
     checkAnswer(choice);
+    nullButtons();
 }
 C.onclick = function() {
         choice = 3;
         checkAnswer(choice);
+        nullButtons();
 }
 D.onclick = function() {
             choice = 4;
             checkAnswer(choice);
+            nullButtons();
 }
 
 function questionCounter(){
