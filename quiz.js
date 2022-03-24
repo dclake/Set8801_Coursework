@@ -16,6 +16,7 @@ let questions = [
         id: 1,
         question: "Saint Lucia is a ________?",
         answer: 2,
+        explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west. It was formed by volcanic activity. Its geographic features include a central ridge of mountains, many rivers and boiling sulphur springs. It is surrounded by sandy beaches.",      
         choices: [
             "Planet",
             "Island",
@@ -105,22 +106,9 @@ function getChoices(){
 
 }
 
-
-    // console.log('foo bar');
-
-    // document.querySelector('#ID1').style.backgroundColor = "red";
-    // document.querySelector('#choice-check').innerHTML = 'choice is '+choice;
-    // console.log(choice);
-    // return choice;
-
 console.log(choice);
 
 function checkAnswer(choice){
-    
-    // var choice = 0;
-
-    console.log(choice);
-    
 correct_answer = questions[0].answer;
 
     if(choice == correct_answer) {
@@ -132,7 +120,10 @@ correct_answer = questions[0].answer;
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
-    
+    var explanation = '<hr>' + questions[0].explanation;
+    var showEplanation = document.getElementById('explanation');
+    showEplanation.innerHTML += explanation;
+    console.log(explanation);
    
 }
 
