@@ -121,8 +121,9 @@ function checkAnswer(choice){
 
     console.log(choice);
     
+correct_answer = questions[0].answer;
 
-    if(choice == 2) {
+    if(choice == correct_answer) {
         console.log('correct');
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "green"
