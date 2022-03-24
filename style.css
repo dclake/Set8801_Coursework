@@ -109,7 +109,16 @@ h1 {
 .incorrect{
   background-color: red;
 }
-
+.explanation {
+  border-top: 2px solid ;
+  padding: 5% 10% 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  vertical-align: middle;
+}
 .quiz-buttons{
   background-color: blue;
   color: #ffffff;

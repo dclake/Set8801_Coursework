@@ -134,7 +134,7 @@ correct_answer = questions[0].answer;
     }
     var explanation = '<hr>' + questions[0].explanation;
     var showEplanation = document.getElementById('explanation');
-    showEplanation.innerHTML += explanation;
+    showEplanation.innerHTML = explanation;
     console.log(explanation);
    
 }
