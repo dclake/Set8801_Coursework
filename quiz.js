@@ -16,7 +16,8 @@ let questions = [
         id: 1,
         question: "Saint Lucia is a ________?",
         answer: 2,
-        explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west. It was formed by volcanic activity. Its geographic features include a central ridge of mountains, many rivers and boiling sulphur springs. It is surrounded by sandy beaches.",      
+        explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west.",      
+        readMore: "https://thecommonwealth.org/our-member-countries/saint-lucia#:~:text=Saint%20Lucia%20is%20a%20fertile,rivers%20and%20boiling%20sulphur%20springs.",
         choices: [
             "Planet",
             "Island",
@@ -122,6 +123,12 @@ console.log(choice);
 
 function checkAnswer(choice){
 correct_answer = questions[0].answer;
+let linkText ="Read More"
+var readMoreLink = questions[0].readMore;
+var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText+ "</a>";
+
+
+
 
     if(choice == correct_answer) {
         console.log('correct');
@@ -132,11 +139,14 @@ correct_answer = questions[0].answer;
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
-    var explanation = '<hr>' + questions[0].explanation;
+    var explanation = questions[0].explanation + " " + result;
     var showEplanation = document.getElementById('explanation');
-    showEplanation.innerHTML = explanation;
-    console.log(explanation);
+    
    
+    showEplanation.innerHTML = explanation;
+    console.log(result);
+    function myFunction() {
+        window.open("https://www.w3schools.com");
 }
-
+}
 
