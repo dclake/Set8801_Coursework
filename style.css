@@ -134,9 +134,8 @@ h1 {
   position:relative;
   text-align: center;
   border: #000000 10px;
-  border-radius: 5px;
   bottom:0;
   width:100%;
   height:60px;  
-  background:rgb(255, 255, 255);
+  ;
 }
