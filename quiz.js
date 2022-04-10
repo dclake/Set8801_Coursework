@@ -48,14 +48,19 @@ let questions = [
         ]
     }
 ]
+
+
 questionCounter();
 showQuestions();
-
 showChoices();
+// chooseAnswer();
+
 var A = document.getElementById("ID1");
 var B = document.getElementById("ID2");
 var C = document.getElementById("ID3");
 var D = document.getElementById("ID4");
+var next = document.getElementById("next");
+var questionState = "";
 
 function nullButtons(){
     A.onclick = null;
@@ -65,32 +70,49 @@ function nullButtons(){
 }
 A.onclick = function() {
     choice = 1;
+    questionState = "answered";
     checkAnswer(choice);
     nullButtons();
 
 }
 B.onclick = function() {
     choice = 2;
+    questionState = "answered";
     checkAnswer(choice);
+
     nullButtons();
 }
 C.onclick = function() {
         choice = 3;
+        questionState = "answered";
         checkAnswer(choice);
         nullButtons();
 }
 D.onclick = function() {
             choice = 4;
+            questionState = "answered";
             checkAnswer(choice);
             nullButtons();
 }
-
-function questionCounter(){
-    var div = document.getElementById("question_number");
-    count = question_number + "/" + question_count;
-    div.innerHTML += count;
+next.onclick =function nextButton(){
+    console.log("Next Button Clicked")
+    if (questionState == "answered"){
+        question_number ++;
+        console.log(question_number)
+    }
+    else{
+        alert("You must answer the question first!")
+    }
 }
 
+
+
+function questionCounter(q_number){
+    q_number =question_number;
+    var div = document.getElementById("question_number");
+    count = q_number + "/" + question_count;
+    div.innerHTML += count;
+}
 function showChoices(){
     getChoices();
     console.log("running");
@@ -149,4 +171,5 @@ var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText+ "</a>
         window.open("https://www.w3schools.com");
 }
 }
+
 
