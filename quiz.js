@@ -1,9 +1,11 @@
 console.log("Hello");
 
 let question_count = 3;
-let question_number = 1;
+var question_number = 1;
+
 let current_question = question_number-1;
 var click;
+
 
 
 
@@ -50,7 +52,7 @@ let questions = [
 ]
 
 
-questionCounter();
+questionCounter(question_number);
 showQuestions();
 showChoices();
 // chooseAnswer();
@@ -94,23 +96,50 @@ D.onclick = function() {
             checkAnswer(choice);
             nullButtons();
 }
-next.onclick =function nextButton(){
-    console.log("Next Button Clicked")
+// next.onclick =function nextButton(){
+//     console.log("Next Button Clicked")
+//     if (questionState == "answered"){
+//         question_number ++;
+//         console.log(question_number)
+//     }
+//     else{
+//         alert("You must answer the question first!")
+//     }
+// }
+next.onclick= function nextButton() {
     if (questionState == "answered"){
-        question_number ++;
-        console.log(question_number)
+        if (question_number == question_count) {
+
+            // Add disabled attribute on
+            // next button
+            document.getElementsByClassName(
+                    'next').disabled = true;
+        } else {
+            question_number++;
+            return setNo();
+        }
     }
     else{
         alert("You must answer the question first!")
     }
 }
+function setNo() {
+    var div = document.getElementById("question_number");
 
+    // Change innerhtml
+    count = question_number + "/" + question_count;
+
+    // return no_box.innerHTML = i;
+    return div.innerHTML = count;
+}
 
 
 function questionCounter(q_number){
-    q_number =question_number;
+    console.log(q_number);
+    q_number = question_number;
     var div = document.getElementById("question_number");
     count = q_number + "/" + question_count;
+    console.log(count);
     div.innerHTML += count;
 }
 function showChoices(){
