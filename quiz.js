@@ -2,9 +2,9 @@ console.log("Hello");
 
 let question_count = 3;
 var question_number = 1;
-
-let current_question = question_number-1;
+var current_question = question_number-1;
 var click;
+console.log("Current Question: " + current_question)
 
 
 
@@ -50,7 +50,6 @@ let questions = [
         ]
     }
 ]
-
 
 questionCounter(question_number);
 showQuestions();
@@ -116,7 +115,8 @@ next.onclick= function nextButton() {
                     'next').disabled = true;
         } else {
             question_number++;
-            return setNo();
+            current_question++;
+            setNo();
         }
     }
     else{
@@ -124,15 +124,23 @@ next.onclick= function nextButton() {
     }
 }
 function setNo() {
-    var div = document.getElementById("question_number");
+    questionCounter();
+    showQuestions();
+    // var div = document.getElementById("question_number");
 
     // Change innerhtml
-    count = question_number + "/" + question_count;
+    // count = question_number + "/" + question_count;
 
     // return no_box.innerHTML = i;
-    return div.innerHTML = count;
-}
+    // div.innerHTML = count;
+    // resestOptions();
 
+
+}
+function resestOptions(){
+    document.getElementById("choice_text").reset();  
+
+}
 
 function questionCounter(q_number){
     console.log(q_number);
@@ -140,7 +148,14 @@ function questionCounter(q_number){
     var div = document.getElementById("question_number");
     count = q_number + "/" + question_count;
     console.log(count);
-    div.innerHTML += count;
+    div.innerHTML = count;
+}
+function showQuestions (c_question){
+    c_question = current_question;
+    console.log(current_question);
+    var div = document.getElementById('question_text');
+    question = questions[c_question].question;
+    div.innerHTML = question;
 }
 function showChoices(){
     getChoices();
@@ -150,21 +165,18 @@ function showChoices(){
     
 }
 
-function showQuestions (){
-    var div = document.getElementById('question_text');
-    question = questions[0].question;
-    div.innerHTML += question;
-};
-function getChoices(){
+function getChoices(c_question){
+    c_question = current_question;
+    // var current_question = question_number-1;
     let choice_text="";
     let data_number=1;
     
-    for (let i = 0; i < questions[current_question].choices.length; i++) {
-        console.log(data_number);
+    for (let i = 0; i < questions[c_question].choices.length; i++) {
+        // console.log(data_number);
     var div = document.getElementById('choice_text');
     choice_text = '<div id = ID'+ data_number +'> <li class="choice "'+ 'data-number='  +data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
     div.innerHTML += choice_text;
-    data_number = data_number+1;
+    data_number ++;
 }
 //document.getElementById("choice_text").addEventListener("click", checkAnswer);
 
@@ -195,10 +207,10 @@ var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText+ "</a>
     
    
     showEplanation.innerHTML = explanation;
-    console.log(result);
-    function myFunction() {
-        window.open("https://www.w3schools.com");
+    // console.log(result);
+    // function myFunction() {
+    //     window.open("https://www.w3schools.com");
 }
-}
+// }
 
 

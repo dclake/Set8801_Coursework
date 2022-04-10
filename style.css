@@ -129,6 +129,9 @@ h1 {
   border-bottom-right-radius: 20px;
   padding: 10px;
 }
+.quiz-buttons:hover{
+  cursor: pointer;
+}
 
 #footer {
   position:relative;
