@@ -126,6 +126,7 @@ next.onclick= function nextButton() {
 function setNo() {
     questionCounter();
     showQuestions();
+    showChoices();
     // var div = document.getElementById("question_number");
 
     // Change innerhtml
@@ -175,6 +176,7 @@ function getChoices(c_question){
         // console.log(data_number);
     var div = document.getElementById('choice_text');
     choice_text = '<div id = ID'+ data_number +'> <li class="choice "'+ 'data-number='  +data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
+    div.style.backgroundColor = "white";
     div.innerHTML += choice_text;
     data_number ++;
 }
