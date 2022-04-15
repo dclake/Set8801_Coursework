@@ -163,8 +163,6 @@ function playQuiz() {
     }
 }
 function setNo() {
-    console.log("Current Question: " + (current_question))
-    console.log("Score: " + score);
     questionCounter();
     showQuestions();
     showChoices();
@@ -225,12 +223,10 @@ function checkWin(){
     if (score_percentage > passing_score){
         result_text = "Congrats" + "!" + "<br>" + "You really know Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
-        console.log(result_text);
     }
     else{
         result_text = "Sorry" + "!" + "<br>" + "You need to learn more abut Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
-        console.log(result_text);
     }
     results.innerHTML = result_text;
 }
