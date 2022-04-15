@@ -1,9 +1,13 @@
 let question_count = 3;
+let passing_score = 50;
 var question_number = 1;
 var current_question = question_number - 1;
 var click;
 var answers = [];
 var choice = '';
+var score = 0;
+var score_percentage = 0;
+
 
 
 let questions = [{
@@ -71,13 +75,11 @@ function playQuiz() {
         questionState = "answered";
         checkAnswer(choice);
         nullButtons();
-
     }
     B.onclick = function () {
         choice = 2;
         questionState = "answered";
         checkAnswer(choice);
-
         nullButtons();
     }
     C.onclick = function () {
@@ -92,7 +94,6 @@ function playQuiz() {
         checkAnswer(choice);
         nullButtons();
     }
-   
     next.onclick = function nextButton() {
         if (questionState == "answered") {
             if (question_number == question_count) {
@@ -110,7 +111,6 @@ function playQuiz() {
             alert("You must answer the question first!")
         }
     }
-    
     function nullButtons() {
         A.onclick = null;
         B.onclick = null;
@@ -162,29 +162,25 @@ function playQuiz() {
 
 function setNo() {
     console.log("Current Question: " + (current_question))
+    console.log("Score: " + score);
     questionCounter();
     showQuestions();
     showChoices();
     playQuiz();
     clearExplanation();
-
-
 }
-
 function questionCounter(q_number) {
     q_number = question_number;
     var div = document.getElementById("question_number");
     count = q_number + "/" + question_count;
     div.innerHTML = count;
 }
-
 function showQuestions(c_question) {
     c_question = current_question;
     var div = document.getElementById('question_text');
     question = questions[c_question].question;
     div.innerHTML = question;
 }
-
 function showChoices() {
     getChoices();
 }
@@ -203,8 +199,6 @@ function getChoices(c_question) {
         data_number++;
     }
 }
-
-
 function checkAnswer() {
     c_question = current_question;
     correct_answer = questions[c_question].answer;
@@ -213,11 +207,11 @@ function checkAnswer() {
     var readMoreLink = questions[current_question].readMore;
     var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText + "</a>";
 
-
     if (choice == correct_answer) {
         console.log('correct');
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "green"
+        score ++;
     } else {
         console.log('wrong');
         buttonClicked = "#ID" + choice;
@@ -226,22 +220,32 @@ function checkAnswer() {
     var explanation = questions[c_question].explanation + " " + result;
     var showEplanation = document.getElementById('explanation');
 
-
     showEplanation.innerHTML = explanation;
 }
 function clearExplanation(){
     var showEplanation = document.getElementById('explanation');
     showEplanation.innerHTML = "";
 }
-
 function showResults(){
     var number = document.getElementById("question_number");
     var header = document.getElementById("question_header");
     number.innerHTML ="";
     header.innerHTML = "Results";
-    
-
-
-
+    calculateScore();
+    checkWin();
 }
-
+function calculateScore(){
+    score_percentage = (score/question_count) * 100;
+}
+function checkWin(){
+    if (score_percentage > passing_score){
+        result_text = "Congrats" + "!" + "<br>" + "You really know Saint Lucia!" +
+        "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
+        console.log(result_text);
+    }
+    else{
+        result_text = "Sorry" + "!" + "<br>" + "You need to learn more abut Saint Lucia!" +
+        "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
+        console.log(result_text);
+    }
+}
