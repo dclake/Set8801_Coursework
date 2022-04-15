@@ -1,14 +1,7 @@
-console.log("Hello");
-
 let question_count = 3;
 var question_number = 1;
 var current_question = question_number - 1;
 var click;
-console.log("Current Question: " + current_question)
-
-
-
-
 var answers = [];
 var choice = '';
 
@@ -29,18 +22,22 @@ let questions = [{
     {
         id: 2,
         question: "What is the Capital City of Saint Lucia?",
-        answer: "Castries",
+        answer: 3,
+        explanation: "Castries, capital and chief city of Saint Lucia island state, in the eastern Caribbean Sea.",
+        readMore: "https://www.britannica.com/place/Castries",
         choices: [
             "Bridgetown",
-            "Castries",
             "Roseau",
+            "Castries",
             "Canneries"
         ]
     },
     {
         id: 3,
         question: "What Sea boarders the western coast of Saint Lucia?",
-        answer: "Caribbean Sea",
+        answer: 3,
+        explanation: "The beaches on the western side of the island front the tranquil turquoise waters of the Caribbean Sea and are favored for swimming and water sports.",
+        readMore: "https://www.tripsavvy.com/st-lucias-best-beaches-1488648",
         choices: [
             "Caspian Sea",
             "Black Sea",
@@ -166,6 +163,7 @@ function playQuiz() {
 }
 
 function setNo() {
+    console.log("Current Question: " + (current_question))
     questionCounter();
     showQuestions();
     showChoices();
@@ -181,17 +179,14 @@ function setNo() {
 // }
 
 function questionCounter(q_number) {
-    console.log(q_number);
     q_number = question_number;
     var div = document.getElementById("question_number");
     count = q_number + "/" + question_count;
-    console.log(count);
     div.innerHTML = count;
 }
 
 function showQuestions(c_question) {
     c_question = current_question;
-    console.log(current_question);
     var div = document.getElementById('question_text');
     question = questions[c_question].question;
     div.innerHTML = question;
@@ -199,8 +194,6 @@ function showQuestions(c_question) {
 
 function showChoices() {
     getChoices();
-    console.log("running");
-    // console.log(click);
 }
 function getChoices(c_question) {
     c_question = current_question;
@@ -211,7 +204,6 @@ function getChoices(c_question) {
     div.innerHTML = choice_text;
 
     for (let i = 0; i < questions[c_question].choices.length; i++) {
-        // console.log(data_number);
         choice_text = '<div id = ID' + data_number + '> <li class="choice "' + 'data-number=' + data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
         div.style.backgroundColor = "white";
         div.innerHTML += choice_text;
@@ -220,10 +212,12 @@ function getChoices(c_question) {
 }
 
 
-function checkAnswer(choice) {
-    correct_answer = questions[0].answer;
+function checkAnswer() {
+    c_question = current_question;
+    correct_answer = questions[c_question].answer;
+    console.log("corret Answer: " + correct_answer);
     let linkText = "Read More"
-    var readMoreLink = questions[0].readMore;
+    var readMoreLink = questions[current_question].readMore;
     var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText + "</a>";
 
 
@@ -236,7 +230,7 @@ function checkAnswer(choice) {
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
-    var explanation = questions[0].explanation + " " + result;
+    var explanation = questions[c_question].explanation + " " + result;
     var showEplanation = document.getElementById('explanation');
 
 
