@@ -2,7 +2,7 @@ console.log("Hello");
 
 let question_count = 3;
 var question_number = 1;
-var current_question = question_number-1;
+var current_question = question_number - 1;
 var click;
 console.log("Current Question: " + current_question)
 
@@ -13,12 +13,11 @@ var answers = [];
 var choice = '';
 
 
-let questions = [
-    {
+let questions = [{
         id: 1,
         question: "Saint Lucia is a ________?",
         answer: 2,
-        explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west.",      
+        explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west.",
         readMore: "https://thecommonwealth.org/our-member-countries/saint-lucia#:~:text=Saint%20Lucia%20is%20a%20fertile,rivers%20and%20boiling%20sulphur%20springs.",
         choices: [
             "Planet",
@@ -55,164 +54,133 @@ setNo();
 // showQuestions();
 // showChoices();
 // chooseAnswer();
-function playQuiz(){
-var A = document.getElementById("ID1");
-var B = document.getElementById("ID2");
-var C = document.getElementById("ID3");
-var D = document.getElementById("ID4");
-var next = document.getElementById("next");
-var questionState = "";
 
-function nullButtons(){
-    A.onclick = null;
-    B.onclick = null;
-    C.onclick = null;
-    D.onclick = null;
-}
-A.onclick = function() {
-    choice = 1;
-    questionState = "answered";
-    checkAnswer(choice);
-    nullButtons();
+function playQuiz() {
+    var A = document.getElementById("ID1");
+    var B = document.getElementById("ID2");
+    var C = document.getElementById("ID3");
+    var D = document.getElementById("ID4");
+    var next = document.getElementById("next");
+    var questionState = "";
 
-}
-B.onclick = function() {
-    choice = 2;
-    questionState = "answered";
-    checkAnswer(choice);
+    function nullButtons() {
+        A.onclick = null;
+        B.onclick = null;
+        C.onclick = null;
+        D.onclick = null;
+    }
+    A.onclick = function () {
+        choice = 1;
+        questionState = "answered";
+        checkAnswer(choice);
+        nullButtons();
 
-    nullButtons();
-}
-C.onclick = function() {
+    }
+    B.onclick = function () {
+        choice = 2;
+        questionState = "answered";
+        checkAnswer(choice);
+
+        nullButtons();
+    }
+    C.onclick = function () {
         choice = 3;
         questionState = "answered";
         checkAnswer(choice);
         nullButtons();
-}
-D.onclick = function() {
-            choice = 4;
-            questionState = "answered";
-            checkAnswer(choice);
-            nullButtons();
-}
-// next.onclick =function nextButton(){
-//     console.log("Next Button Clicked")
-//     if (questionState == "answered"){
-//         question_number ++;
-//         console.log(question_number)
-//     }
-//     else{
-//         alert("You must answer the question first!")
-//     }
-// }
-next.onclick= function nextButton() {
-    if (questionState == "answered"){
-        if (question_number == question_count) {
+    }
+    D.onclick = function () {
+        choice = 4;
+        questionState = "answered";
+        checkAnswer(choice);
+        nullButtons();
+    }
+   
+    next.onclick = function nextButton() {
+        if (questionState == "answered") {
+            if (question_number == question_count) {
 
-            // Add disabled attribute on
-            // next button
-            document.getElementsByClassName(
+                // Add disabled attribute on
+                // next button
+                document.getElementsByClassName(
                     'next').disabled = true;
+            } else {
+                question_number++;
+                current_question++;
+                setNo();
+            }
         } else {
-            question_number++;
-            current_question++;
-            setNo();
+            alert("You must answer the question first!")
         }
     }
-    else{
-        alert("You must answer the question first!")
+    
+    function nullButtons() {
+        A.onclick = null;
+        B.onclick = null;
+        C.onclick = null;
+        D.onclick = null;
     }
-}
-var A = document.getElementById("ID1");
-var B = document.getElementById("ID2");
-var C = document.getElementById("ID3");
-var D = document.getElementById("ID4");
-var next = document.getElementById("next");
-var questionState = "";
+    A.onclick = function () {
+        choice = 1;
+        questionState = "answered";
+        checkAnswer(choice);
+        nullButtons();
 
-function nullButtons(){
-    A.onclick = null;
-    B.onclick = null;
-    C.onclick = null;
-    D.onclick = null;
-}
-A.onclick = function() {
-    choice = 1;
-    questionState = "answered";
-    checkAnswer(choice);
-    nullButtons();
+    }
+    B.onclick = function () {
+        choice = 2;
+        questionState = "answered";
+        checkAnswer(choice);
 
-}
-B.onclick = function() {
-    choice = 2;
-    questionState = "answered";
-    checkAnswer(choice);
-
-    nullButtons();
-}
-C.onclick = function() {
+        nullButtons();
+    }
+    C.onclick = function () {
         choice = 3;
         questionState = "answered";
         checkAnswer(choice);
         nullButtons();
-}
-D.onclick = function() {
-            choice = 4;
-            questionState = "answered";
-            checkAnswer(choice);
-            nullButtons();
-}
-// next.onclick =function nextButton(){
-//     console.log("Next Button Clicked")
-//     if (questionState == "answered"){
-//         question_number ++;
-//         console.log(question_number)
-//     }
-//     else{
-//         alert("You must answer the question first!")
-//     }
-// }
-next.onclick= function nextButton() {
-    if (questionState == "answered"){
-        if (question_number == question_count) {
+    }
+    D.onclick = function () {
+        choice = 4;
+        questionState = "answered";
+        checkAnswer(choice);
+        nullButtons();
+    }
+    next.onclick = function nextButton() {
+        if (questionState == "answered") {
+            if (question_number == question_count) {
 
-            // Add disabled attribute on
-            // next button
-            document.getElementsByClassName(
+                // Add disabled attribute on
+                // next button
+                document.getElementsByClassName(
                     'next').disabled = true;
+            } else {
+                question_number++;
+                current_question++;
+                setNo();
+            }
         } else {
-            question_number++;
-            current_question++;
-            setNo();
+            alert("You must answer the question first!")
         }
     }
-    else{
-        alert("You must answer the question first!")
-    }
 }
-}
+
 function setNo() {
     questionCounter();
     showQuestions();
     showChoices();
     playQuiz();
-    // var div = document.getElementById("question_number");
-
-    // Change innerhtml
-    // count = question_number + "/" + question_count;
-
-    // return no_box.innerHTML = i;
-    // div.innerHTML = count;
-    // resestOptions();
+    clearExplanation();
 
 
 }
-function resestOptions(){
-    document.getElementById("choice_text").reset();  
 
-}
+// function resestOptions() {
+//     document.getElementById("choice_text").reset();
 
-function questionCounter(q_number){
+// }
+
+function questionCounter(q_number) {
     console.log(q_number);
     q_number = question_number;
     var div = document.getElementById("question_number");
@@ -220,56 +188,46 @@ function questionCounter(q_number){
     console.log(count);
     div.innerHTML = count;
 }
-function showQuestions (c_question){
+
+function showQuestions(c_question) {
     c_question = current_question;
     console.log(current_question);
     var div = document.getElementById('question_text');
     question = questions[c_question].question;
     div.innerHTML = question;
 }
-function showChoices(){
+
+function showChoices() {
     getChoices();
     console.log("running");
-  console.log(click);
-
-    
+    // console.log(click);
 }
-
-function getChoices(c_question){
+function getChoices(c_question) {
     c_question = current_question;
     // var current_question = question_number-1;
-    let choice_text="";
-    let data_number=1;
+    let choice_text = "";
+    let data_number = 1;
     var div = document.getElementById('choice_text');
     div.innerHTML = choice_text;
 
-
-
-    
     for (let i = 0; i < questions[c_question].choices.length; i++) {
         // console.log(data_number);
-    choice_text = '<div id = ID'+ data_number +'> <li class="choice "'+ 'data-number='  +data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
-    div.style.backgroundColor = "white";
-    div.innerHTML += choice_text;
-    data_number ++;
+        choice_text = '<div id = ID' + data_number + '> <li class="choice "' + 'data-number=' + data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
+        div.style.backgroundColor = "white";
+        div.innerHTML += choice_text;
+        data_number++;
+    }
 }
 
-//document.getElementById("choice_text").addEventListener("click", checkAnswer);
 
-}
-
-console.log(choice);
-
-function checkAnswer(choice){
-correct_answer = questions[0].answer;
-let linkText ="Read More"
-var readMoreLink = questions[0].readMore;
-var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText+ "</a>";
+function checkAnswer(choice) {
+    correct_answer = questions[0].answer;
+    let linkText = "Read More"
+    var readMoreLink = questions[0].readMore;
+    var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText + "</a>";
 
 
-
-
-    if(choice == correct_answer) {
+    if (choice == correct_answer) {
         console.log('correct');
         buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "green"
@@ -280,13 +238,14 @@ var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText+ "</a>
     }
     var explanation = questions[0].explanation + " " + result;
     var showEplanation = document.getElementById('explanation');
-    
-   
+
+
     showEplanation.innerHTML = explanation;
-    // console.log(result);
-    // function myFunction() {
-    //     window.open("https://www.w3schools.com");
 }
-// }
+function clearExplanation (){
+    var showEplanation = document.getElementById('explanation');
+    showEplanation.innerHTML = "";
 
 
+
+}
