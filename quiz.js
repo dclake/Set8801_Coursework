@@ -171,15 +171,20 @@ function getChoices(c_question){
     // var current_question = question_number-1;
     let choice_text="";
     let data_number=1;
+    var div = document.getElementById('choice_text');
+    div.innerHTML = choice_text;
+
+
+
     
     for (let i = 0; i < questions[c_question].choices.length; i++) {
         // console.log(data_number);
-    var div = document.getElementById('choice_text');
     choice_text = '<div id = ID'+ data_number +'> <li class="choice "'+ 'data-number='  +data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
     div.style.backgroundColor = "white";
     div.innerHTML += choice_text;
     data_number ++;
 }
+
 //document.getElementById("choice_text").addEventListener("click", checkAnswer);
 
 }
