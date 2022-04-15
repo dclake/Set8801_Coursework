@@ -146,11 +146,9 @@ function playQuiz() {
     next.onclick = function nextButton() {
         if (questionState == "answered") {
             if (question_number == question_count) {
-
-                // Add disabled attribute on
-                // next button
                 document.getElementsByClassName(
                     'next').disabled = true;
+                    showResults();
             } else {
                 question_number++;
                 current_question++;
@@ -172,11 +170,6 @@ function setNo() {
 
 
 }
-
-// function resestOptions() {
-//     document.getElementById("choice_text").reset();
-
-// }
 
 function questionCounter(q_number) {
     q_number = question_number;
@@ -236,10 +229,19 @@ function checkAnswer() {
 
     showEplanation.innerHTML = explanation;
 }
-function clearExplanation (){
+function clearExplanation(){
     var showEplanation = document.getElementById('explanation');
     showEplanation.innerHTML = "";
+}
+
+function showResults(){
+    var number = document.getElementById("question_number");
+    var header = document.getElementById("question_header");
+    number.innerHTML ="";
+    header.innerHTML = "Results";
+    
 
 
 
 }
+

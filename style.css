@@ -74,6 +74,13 @@ h1 {
   padding: 20px 20px 0;
   
 }
+.question-header{
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+  padding: 20px 20px 0;
+  
+}
 .question_text{
   padding: 0 10% 0;
   text-align: large;
