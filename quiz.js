@@ -50,12 +50,12 @@ let questions = [
         ]
     }
 ]
-
-questionCounter(question_number);
-showQuestions();
-showChoices();
+setNo();
+// questionCounter(question_number);
+// showQuestions();
+// showChoices();
 // chooseAnswer();
-
+function playQuiz(){
 var A = document.getElementById("ID1");
 var B = document.getElementById("ID2");
 var C = document.getElementById("ID3");
@@ -123,10 +123,79 @@ next.onclick= function nextButton() {
         alert("You must answer the question first!")
     }
 }
+var A = document.getElementById("ID1");
+var B = document.getElementById("ID2");
+var C = document.getElementById("ID3");
+var D = document.getElementById("ID4");
+var next = document.getElementById("next");
+var questionState = "";
+
+function nullButtons(){
+    A.onclick = null;
+    B.onclick = null;
+    C.onclick = null;
+    D.onclick = null;
+}
+A.onclick = function() {
+    choice = 1;
+    questionState = "answered";
+    checkAnswer(choice);
+    nullButtons();
+
+}
+B.onclick = function() {
+    choice = 2;
+    questionState = "answered";
+    checkAnswer(choice);
+
+    nullButtons();
+}
+C.onclick = function() {
+        choice = 3;
+        questionState = "answered";
+        checkAnswer(choice);
+        nullButtons();
+}
+D.onclick = function() {
+            choice = 4;
+            questionState = "answered";
+            checkAnswer(choice);
+            nullButtons();
+}
+// next.onclick =function nextButton(){
+//     console.log("Next Button Clicked")
+//     if (questionState == "answered"){
+//         question_number ++;
+//         console.log(question_number)
+//     }
+//     else{
+//         alert("You must answer the question first!")
+//     }
+// }
+next.onclick= function nextButton() {
+    if (questionState == "answered"){
+        if (question_number == question_count) {
+
+            // Add disabled attribute on
+            // next button
+            document.getElementsByClassName(
+                    'next').disabled = true;
+        } else {
+            question_number++;
+            current_question++;
+            setNo();
+        }
+    }
+    else{
+        alert("You must answer the question first!")
+    }
+}
+}
 function setNo() {
     questionCounter();
     showQuestions();
     showChoices();
+    playQuiz();
     // var div = document.getElementById("question_number");
 
     // Change innerhtml
