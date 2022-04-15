@@ -8,6 +8,13 @@ var choice = '';
 var score = 0;
 var score_percentage = 0;
 
+var results = document.getElementById("results");
+var div_question_number = document.getElementById("question_number");
+var div_header = document.getElementById("question_header");
+var div_question_text = document.getElementById('question_text');
+var div_choice_text = document.getElementById('choice_text');
+var div_explanation = document.getElementById('explanation');
+
 
 
 let questions = [{
@@ -51,10 +58,6 @@ let questions = [{
     }
 ]
 setNo();
-// questionCounter(question_number);
-// showQuestions();
-// showChoices();
-// chooseAnswer();
 
 function playQuiz() {
     var A = document.getElementById("ID1");
@@ -159,7 +162,6 @@ function playQuiz() {
         }
     }
 }
-
 function setNo() {
     console.log("Current Question: " + (current_question))
     console.log("Score: " + score);
@@ -169,68 +171,50 @@ function setNo() {
     playQuiz();
     clearExplanation();
 }
-function questionCounter(q_number) {
-    q_number = question_number;
-    var div = document.getElementById("question_number");
-    count = q_number + "/" + question_count;
-    div.innerHTML = count;
+function questionCounter() {
+    count = question_number + "/" + question_count;
+    div_question_number.innerHTML = count;
 }
-function showQuestions(c_question) {
-    c_question = current_question;
-    var div = document.getElementById('question_text');
-    question = questions[c_question].question;
-    div.innerHTML = question;
+function showQuestions() {
+    question = questions[current_question].question;
+    div_question_text.innerHTML = question;
 }
 function showChoices() {
-    getChoices();
-}
-function getChoices(c_question) {
-    c_question = current_question;
-    // var current_question = question_number-1;
     let choice_text = "";
     let data_number = 1;
-    var div = document.getElementById('choice_text');
-    div.innerHTML = choice_text;
+    div_choice_text.innerHTML = choice_text;
 
-    for (let i = 0; i < questions[c_question].choices.length; i++) {
-        choice_text = '<div id = ID' + data_number + '> <li class="choice "' + 'data-number=' + data_number + '">' + questions[current_question].choices[i] + '</li> </div>';
-        div.style.backgroundColor = "white";
-        div.innerHTML += choice_text;
+    for (let choice_position = 0; choice_position < questions[current_question].choices.length; choice_position++) {
+        choice_text = '<div id = ID' + data_number + '> <li class="choice "' + 'data-number=' + data_number + '">' + 
+        questions[current_question].choices[choice_position] + '</li> </div>';
+        div_choice_text.style.backgroundColor = "white";
+        div_choice_text.innerHTML += choice_text;
         data_number++;
     }
 }
 function checkAnswer() {
-    c_question = current_question;
-    correct_answer = questions[c_question].answer;
-    console.log("corret Answer: " + correct_answer);
+    correct_answer = questions[current_question].answer;
     let linkText = "Read More"
     var readMoreLink = questions[current_question].readMore;
     var result = "<a href='" + readMoreLink + "' target='_blank'>" + linkText + "</a>";
+    var explanation = questions[current_question].explanation + " " + result;
+    var buttonClicked = "#ID" + choice;
 
     if (choice == correct_answer) {
-        console.log('correct');
-        buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "green"
         score ++;
     } else {
-        console.log('wrong');
-        buttonClicked = "#ID" + choice;
         document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
-    var explanation = questions[c_question].explanation + " " + result;
-    var showEplanation = document.getElementById('explanation');
-
-    showEplanation.innerHTML = explanation;
+    div_explanation.innerHTML = explanation;
 }
 function clearExplanation(){
     var showEplanation = document.getElementById('explanation');
     showEplanation.innerHTML = "";
 }
 function showResults(){
-    var number = document.getElementById("question_number");
-    var header = document.getElementById("question_header");
-    number.innerHTML ="";
-    header.innerHTML = "Results";
+    div_header.innerHTML = "Results";
+    clearBox();
     calculateScore();
     checkWin();
 }
@@ -248,4 +232,11 @@ function checkWin(){
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
         console.log(result_text);
     }
+    results.innerHTML = result_text;
+}
+function clearBox(){
+    div_question_number.innerHTML ="";
+    div_question_text.innerHTML = "";
+    div_choice_text.innerHTML = "";
+    clearExplanation();
 }
