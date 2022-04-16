@@ -15,6 +15,9 @@ var div_question_text = document.getElementById('question_text');
 var div_choice_text = document.getElementById('choice_text');
 var div_explanation = document.getElementById('explanation');
 var div_next = document.getElementById("next");
+var div_review = document.getElementById("review");
+var div_again = document.getElementById("again");
+var div_home = document.getElementById("home");
 
 
 
@@ -65,7 +68,6 @@ function playQuiz() {
     var B = document.getElementById("ID2");
     var C = document.getElementById("ID3");
     var D = document.getElementById("ID4");
-    // var next = document.getElementById("next");
     var questionState = "";
 
     function nullButtons() {
@@ -164,6 +166,7 @@ function playQuiz() {
     }
 }
 function setNo() {
+    hideResultButtons();
     questionCounter();
     showQuestions();
     showChoices();
@@ -226,17 +229,37 @@ function checkWin(){
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
     else{
-        result_text = "Sorry" + "!" + "<br>" + "You need to learn more abut Saint Lucia!" +
+        result_text = "Sorry" + "!" + "<br>" + "You need to learn more about Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
     results.innerHTML = result_text;
-    div_next.innerHTML = "Home"
-    div_next.onclick = "window.location='home.html'"
+    hideNextButton();
+    showResultButtons();
 }
 function clearBox(){
     div_question_number.innerHTML ="";
     div_question_text.innerHTML = "";
     div_choice_text.innerHTML = "";
     clearExplanation();
+}
+function hideResultButtons(){
+    div_review.style.visibility = "hidden";
+    div_again.style.visibility = "hidden";
+    div_home.style.visibility = "hidden";
+    div_review.style.display = "none";
+    div_again.style.display = "none";
+    div_home.style.display = "none";
+}
+function showResultButtons(){
+    div_review.style.visibility = "visible"
+    div_again.style.visibility = "visible";
+    div_home.style.visibility = "visible";
+    div_review.style.display = "block";
+    div_again.style.display = "block";
+    div_home.style.display = "block";
+}
+function hideNextButton(){
+    div_next.style.visibility = "hidden";
+    div_next.style.display = "none"
 }
 
