@@ -14,6 +14,7 @@ var div_header = document.getElementById("question_header");
 var div_question_text = document.getElementById('question_text');
 var div_choice_text = document.getElementById('choice_text');
 var div_explanation = document.getElementById('explanation');
+var div_next = document.getElementById("next");
 
 
 
@@ -64,7 +65,7 @@ function playQuiz() {
     var B = document.getElementById("ID2");
     var C = document.getElementById("ID3");
     var D = document.getElementById("ID4");
-    var next = document.getElementById("next");
+    // var next = document.getElementById("next");
     var questionState = "";
 
     function nullButtons() {
@@ -97,7 +98,7 @@ function playQuiz() {
         checkAnswer(choice);
         nullButtons();
     }
-    next.onclick = function nextButton() {
+    div_next.onclick = function nextButton() {
         if (questionState == "answered") {
             if (question_number == question_count) {
 
@@ -146,7 +147,7 @@ function playQuiz() {
         checkAnswer(choice);
         nullButtons();
     }
-    next.onclick = function nextButton() {
+    div_next.onclick = function nextButton() {
         if (questionState == "answered") {
             if (question_number == question_count) {
                 document.getElementsByClassName(
@@ -229,6 +230,8 @@ function checkWin(){
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
     results.innerHTML = result_text;
+    div_next.innerHTML = "Home"
+    div_next.onclick = "window.location='home.html'"
 }
 function clearBox(){
     div_question_number.innerHTML ="";
@@ -236,3 +239,4 @@ function clearBox(){
     div_choice_text.innerHTML = "";
     clearExplanation();
 }
+
