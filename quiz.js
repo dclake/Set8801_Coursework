@@ -8,7 +8,7 @@ var choice = '';
 var score = 0;
 var score_percentage = 0;
 
-var results = document.getElementById("results");
+var div_results = document.getElementById("results");
 var div_question_number = document.getElementById("question_number");
 var div_header = document.getElementById("question_header");
 var div_question_text = document.getElementById('question_text');
@@ -134,7 +134,6 @@ function playQuiz() {
         choice = 2;
         questionState = "answered";
         checkAnswer(choice);
-
         nullButtons();
     }
     C.onclick = function () {
@@ -164,6 +163,11 @@ function playQuiz() {
             alert("You must answer the question first!")
         }
     }
+    div_again.onclick = function againButton(){
+        console.log("again pressed");
+        resetQuiz();
+    }
+    
 }
 function setNo() {
     hideResultButtons();
@@ -220,6 +224,16 @@ function showResults(){
     calculateScore();
     checkWin();
 }
+function resetQuiz(){
+    question_number = 1;
+    current_question = question_number;
+    div_results.style.visibility = "hidden";
+    div_results.style.display = "none";
+    div_header.style.visibility ="hidden";
+    div_header.style.display = "none";
+    showNextButton ();
+    setNo();
+}
 function calculateScore(){
     score_percentage = (score/question_count) * 100;
 }
@@ -232,7 +246,7 @@ function checkWin(){
         result_text = "Sorry" + "!" + "<br>" + "You need to learn more about Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
-    results.innerHTML = result_text;
+    div_results.innerHTML = result_text;
     hideNextButton();
     showResultButtons();
 }
@@ -261,5 +275,9 @@ function showResultButtons(){
 function hideNextButton(){
     div_next.style.visibility = "hidden";
     div_next.style.display = "none"
+}
+function showNextButton(){
+    div_next.style.visibility = "visible";
+    div_next.style.display = "block"
 }
 
