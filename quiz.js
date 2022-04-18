@@ -167,9 +167,6 @@ function playQuiz() {
         console.log("again pressed");
         resetQuiz();
     }
-    div_home.onclick = function goHome(){
-        window.location="/index.html";
-    }
     
 }
 function setNo() {
