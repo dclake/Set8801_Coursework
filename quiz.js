@@ -20,7 +20,7 @@ var div_again = document.getElementById("again");
 var div_home = document.getElementById("home");
 
 
-
+// Question set
 let questions = [{
         id: 1,
         question: "Saint Lucia is a ________?",
@@ -59,7 +59,46 @@ let questions = [{
             "Caribbean Sea",
             "What Sea?"
         ]
-    }
+    },
+    {
+        id: 4,
+        question: "Which is the official language of Saint Lucia?",
+        answer: 1,
+        explanation: "Saint Lucia’s official language is English, which is the island’s official language. During the 16th century, the British established a colony in the Caribbean, which gave rise to the language.",
+        readMore: "https://www.ilovelanguages.com/what-language-do-they-speak-in-st-lucia/",
+        choices: [
+            "English",
+            "French",
+            "German",
+            "Italian"
+        ]
+    },
+    {
+        id: 5,
+        question: " _____ serves as a second language of many Saint Lucians.",
+        answer: 3,
+        explanation: "Saint Lucian Creole French (Kwéyol), also known as Patois, is a French-speaking dialect of Saint Lucia. ",
+        readMore: "https://www.worldatlas.com/articles/what-languages-are-spoken-in-saint-lucia.html",
+        choices: [
+            "French",
+            "Papiamento",
+            "Patois/ Kweyol",
+            "Klingon"
+        ]
+    },
+    {
+        id: 6,
+        question: " This color is not present in the Saint Lucian Flag.",
+        answer: 3,
+        explanation: "Saint Lucian Creole French (Kwéyol), also known as Patois, is a French-speaking dialect of Saint Lucia. ",
+        readMore: "https://www.worldatlas.com/articles/what-languages-are-spoken-in-saint-lucia.html",
+        choices: [
+            "White",
+            "Papiamento",
+            "Patois/ Kweyol",
+            "Klingon"
+        ]
+    },
 ]
 setNo();
 
@@ -163,10 +202,6 @@ function playQuiz() {
             alert("You must answer the question first!")
         }
     }
-    // div_again.onclick = function againButton(){
-    //     console.log("again pressed");
-    //     resetQuiz();
-    // }
     
 }
 function setNo() {
