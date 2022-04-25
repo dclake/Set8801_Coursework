@@ -163,10 +163,10 @@ function playQuiz() {
             alert("You must answer the question first!")
         }
     }
-    div_again.onclick = function againButton(){
-        console.log("again pressed");
-        resetQuiz();
-    }
+    // div_again.onclick = function againButton(){
+    //     console.log("again pressed");
+    //     resetQuiz();
+    // }
     
 }
 function setNo() {
@@ -215,8 +215,8 @@ function checkAnswer() {
     div_explanation.innerHTML = explanation;
 }
 function clearExplanation(){
-    var showEplanation = document.getElementById('explanation');
-    showEplanation.innerHTML = "";
+    div_explanation.style.visibility = "hidden";
+    div_explanation.style.display = "none";
 }
 function showResults(){
     div_header.innerHTML = "Results";
@@ -251,26 +251,28 @@ function checkWin(){
     showResultButtons();
 }
 function clearBox(){
+    div_choice_text.style.visibility = "hidden";
+    div_choice_text.style.display = "none";
     div_question_number.innerHTML ="";
     div_question_text.innerHTML = "";
-    div_choice_text.innerHTML = "";
+    // div_choice_text.innerHTML = "";
     clearExplanation();
 }
 function hideResultButtons(){
-    div_review.style.visibility = "hidden";
-    div_again.style.visibility = "hidden";
-    div_home.style.visibility = "hidden";
+    // div_review.style.visibility = "hidden";
+    // div_again.style.visibility = "hidden";
+    // div_home.style.visibility = "hidden";
     div_review.style.display = "none";
     div_again.style.display = "none";
     div_home.style.display = "none";
 }
 function showResultButtons(){
-    div_review.style.visibility = "visible"
-    div_again.style.visibility = "visible";
-    div_home.style.visibility = "visible";
-    div_review.style.display = "block";
-    div_again.style.display = "block";
-    div_home.style.display = "block";
+    // div_review.style.visibility = "visible"
+    // div_again.style.visibility = "visible";
+    // div_home.style.visibility = "visible";
+    div_review.style.display = "inline";
+    div_again.style.display = "inline";
+    div_home.style.display = "inline";
 }
 function hideNextButton(){
     div_next.style.visibility = "hidden";

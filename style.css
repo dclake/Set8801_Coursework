@@ -38,7 +38,7 @@ h1 {
   align-items: center;
 }
 .button_containter{
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -53,6 +53,7 @@ h1 {
   font-size: 16px;
   font-weight: bold;
   width: 270px;
+  position: relative;
   
 }
 .button:hover{
