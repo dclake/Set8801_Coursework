@@ -153,7 +153,12 @@ let questions = [{
     },
 
 ]
-setNo();
+
+setupQuiz();
+// setNo();
+function setupQuiz(){
+    div_header.innerHTML = "Quiz Setup";
+}
 
 function playQuiz() {
     var A = document.getElementById("ID1");

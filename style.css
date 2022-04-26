@@ -54,7 +54,6 @@ h1 {
   font-weight: bold;
   width: 270px;
   position: relative;
-  
 }
 .button:hover{
   background-color: #ffffff;
@@ -81,7 +80,6 @@ h1 {
   font-size: x-large;
   font-weight: bold;
   padding: 20px 20px 0;
-  
 }
 .question_text{
   padding: 0 10% 0;
@@ -95,12 +93,26 @@ h1 {
   font-weight: bold;
   font-size: large;
 }
+.input-label{
+  padding: 5% 10% 0;
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+}
+.text-input{
+  /* padding: 0 10% 0; */
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+  width: 80%;
+}
 
 .choice-container{
   padding: 0 10% 0;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .choice{
   min-height: 30px;
   display: flex;
