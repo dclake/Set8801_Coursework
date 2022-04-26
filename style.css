@@ -95,17 +95,37 @@ h1 {
 }
 .input-label{
   padding: 5% 10% 0;
-  text-align: left;
+  /* text-align: left; */
   font-weight: bold;
   font-size: large;
 }
-.text-input{
+.input-text{
   /* padding: 0 10% 0; */
+  border: 5px solid gray;
   text-align: left;
   font-weight: bold;
   font-size: large;
-  width: 80%;
+  width: 70%;
 }
+.questioncount{
+  padding: 0 10% 0%;
+  /* border: 5px solid gray; */
+  justify-content: center;
+  /* width: 5px; */
+  /* text-align: left; */
+  font-weight: bold;
+  font-size: x-large;
+}
+.checkbox-inline{
+  position:relative;
+  display:inline-block;
+  padding-left:20px;
+  margin-bottom:0;
+  font-size: large;
+  font-weight: bold;
+  vertical-align:
+  middle;
+  cursor:pointer}
 
 .choice-container{
   padding: 0 10% 0;
@@ -138,11 +158,10 @@ h1 {
   background-color: red;
 }
 .explanation {
- 
-  /* padding: 5% 10% 0; */
+
   margin-top: 20px;
   margin-bottom: 20px;
- 
+
   justify-content: left;
   align-items: center;
   vertical-align: middle;

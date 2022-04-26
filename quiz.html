@@ -19,16 +19,27 @@
     <hr>
     <div id="results" class="results"></div>
     <div id="question_text" class="question_text"></div>
-    <label class="input-label">Name <input type=“text” id="name" class="text-input"></label>
-    <label class="input-label">Level  
-      <input type="checkbox" id="Easy" name="Easy" value="Easy"><lablel>Easy</lablel>
-      <input type="checkbox" id="Medium" name="Medium" value="Medium"><lablel>Medium</lablel>
-      <input type="checkbox" id="Hard" name="Hard" value="Hard"><lablel>Hard</lablel>
-    </lablel>
+    
    
     <div class="choice-container">
+<div id="setup">
+  <h3 >Name</h3>
+  <input class="input-text" type="text" id="name" name="name">
+  <h3 >Level</h3>
+  <label class="checkbox-inline">
+    <input id="easy" type="checkbox" value="">Easy
+  </label>
+  <label class="checkbox-inline">
+    <input id="medium" type="checkbox" value="">Medium
+  </label>
+  <label class="checkbox-inline">
+    <input id="hard" type="checkbox" value="">Hard
+  </label> <br><br>
+  <h3 >Number of Questions</h3>
+  <div id="noquestions" class="questioncount"></div>
+  <button onclick="startQuiz()" class="button">Start Quiz</button>
+</div>
       <div id="choice_text"></div>
-
       <div id="explanation" class="explanation"></div></div>
       <div class="button_container">
         <button id="next" class="button">Next</button>

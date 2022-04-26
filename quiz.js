@@ -1,5 +1,6 @@
-let question_count = 3;
 let passing_score = 50;
+
+var question_count = 3;
 var question_number = 1;
 var current_question = question_number - 1;
 var click;
@@ -9,6 +10,13 @@ var score = 0;
 var score_percentage = 0;
 
 var div_results = document.getElementById("results");
+var div_setup = document.getElementById("setup");
+var div_name = document.getElementById("name");
+var div_noquestion = document.getElementById("noquestions");
+var div_easy = document.getElementById("easy");
+var div_medium = document.getElementById("medium");
+var div_hard = document.getElementById("hard");
+var div_start = document.getElementById("start_button");
 var div_question_number = document.getElementById("question_number");
 var div_header = document.getElementById("question_header");
 var div_question_text = document.getElementById('question_text');
@@ -18,7 +26,6 @@ var div_next = document.getElementById("next");
 var div_review = document.getElementById("review");
 var div_again = document.getElementById("again");
 var div_home = document.getElementById("home");
-
 
 // Question set
 let questions = [{
@@ -156,8 +163,39 @@ let questions = [{
 
 setupQuiz();
 // setNo();
+function startQuiz(){
+    console.log("Start Quiz");
+    hideStart();
+
+        setNo();
+}
 function setupQuiz(){
+    var div_start = document.getElementById("start");
+    var play = document.getElementById("play");
+    hideResultButtons();
+    hideNextButton();
     div_header.innerHTML = "Quiz Setup";
+    // play.onlick = function(){
+    //     console.log("Start Quiz");
+    //     // hideStart();
+    //     // setNo();
+    // }
+    div_easy.onclick = function(){
+        question_count =3;
+        console.log("Easy");
+        div_noquestion.innerHTML =question_count;
+    }
+    div_medium.onclick = function(){
+        question_count =8;
+        console.log("Meduim");
+        div_noquestion.innerHTML =question_count;
+    }
+    div_hard.onclick = function(){
+        question_count =15;
+        console.log("Hard");
+        div_noquestion.innerHTML =question_count;
+    }
+    
 }
 
 function playQuiz() {
@@ -263,6 +301,7 @@ function playQuiz() {
     
 }
 function setNo() {
+    showNextButton();
     hideResultButtons();
     questionCounter();
     showQuestions();
@@ -373,6 +412,10 @@ function hideNextButton(){
 }
 function showNextButton(){
     div_next.style.visibility = "visible";
-    div_next.style.display = "block"
+    div_next.style.display = "inline"
+}
+function hideStart(){
+    div_setup.style.visibility ="hidden";
+    div_setup.style.display = "none";
 }
 
