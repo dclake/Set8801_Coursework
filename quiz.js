@@ -165,9 +165,12 @@ setupQuiz();
 // setNo();
 function startQuiz(){
     console.log("Start Quiz");
+    let name = document.getElementById("name").value;
+    document.cookie = name;
+    // name = namevalue;
+    console.log(name);
     hideStart();
-
-        setNo();
+    setNo();
 }
 function setupQuiz(){
     var div_start = document.getElementById("start");
@@ -370,12 +373,13 @@ function calculateScore(){
     score_percentage = (score/question_count) * 100;
 }
 function checkWin(){
+    let name = document.cookie;
     if (score_percentage > passing_score){
-        result_text = "Congrats" + "!" + "<br>" + "You really know Saint Lucia!" +
+        result_text = "Congrats " + name +"!" + "<br>" + "You really know Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
     else{
-        result_text = "Sorry" + "!" + "<br>" + "You need to learn more about Saint Lucia!" +
+        result_text = "Sorry " + name + "!" + "<br>" + "You need to learn more about Saint Lucia!" +
         "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
     div_results.innerHTML = result_text;
