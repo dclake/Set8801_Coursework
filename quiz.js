@@ -89,16 +89,69 @@ let questions = [{
     {
         id: 6,
         question: " This color is not present in the Saint Lucian Flag.",
-        answer: 3,
-        explanation: "Saint Lucian Creole French (Kwéyol), also known as Patois, is a French-speaking dialect of Saint Lucia. ",
-        readMore: "https://www.worldatlas.com/articles/what-languages-are-spoken-in-saint-lucia.html",
+        answer: 2,
+        explanation: "The flag of Saint Lucia consists of a cerulean blue field charged with a yellow triangle in front of a white-edged black isosceles triangle.",
+        readMore: "https://en.wikipedia.org/wiki/Flag_of_Saint_Lucia",
         choices: [
             "White",
-            "Papiamento",
-            "Patois/ Kweyol",
-            "Klingon"
+            "Red",
+            "Yellow",
+            "Black"
         ]
     },
+    {
+        id: 7,
+        question: "What is the name of Saint Lucia's international Airport?",
+        answer: 3,
+        explanation: "There are two airports on the island of St. Lucia. Hewanorra International Airport at Vieux Fort (UVF) is located on the southern end of the island and serves primarily international flights. George F. L. Charles Airport (SLU), formerly known as 'Vigie Airport', is located on the outskirts of Castries in the north and is used for inter-island flights.",
+        readMore: "https://en.wikipedia.org/wiki/Hewanorra_International_Airport",
+        choices: [
+            "Argyle International Airport",
+            "Grantley Adams International Airport",
+            "Hewanorra International Airport",
+            "Piarco International Airport"
+        ]
+    },
+    {
+        id: 8,
+        question: "Saint Lucia is often referred to using the name of this famous woman from history:",
+        answer: 4,
+        explanation: " The tug-of-war between the Colonial powers of Enlgand & France, inspired one British historian to give Saint Lucia the nickname “Helen of the West Indies” comparing her to Helen of Troy",
+        readMore: "https://eastwinds.com/simply-beautiful-saint-lucia-helen-of-the-west-indies/",
+        choices: [
+            "Queen Victoria",
+            "Mary Magdalene",
+            "Joan of Arch",
+            "Helen of Troy"
+        ]
+    },
+    {
+        id: 9,
+        question: "What is the locally brewed beer of Saint Lucia called?",
+        answer: 1,
+        explanation: "Piton is a Pilsner beer brand from the island of Saint Lucia, brewed by Windward & Leeward Brewing Limited, which is owned by Heineken.",
+        readMore: "https://www.islandervillas.com/piton-beer-st-lucia.html",
+        choices: [
+            "Piton",
+            "Carib",
+            "Corona",
+            "Parbo"
+        ]
+    },
+    {
+        id: 10,
+        question: "Which Caribbean Island is first due south of St Lucia?",
+        answer: 2,
+        explanation: "Saint Lucia it is located north/northeast of the islands of Saint Vincent and the Grenadines,",
+        readMore: "https://www.travelpulse.com/destinations/caribbean/st-lucia.html",
+        choices: [
+            "Antigua",
+            "Saint Vincent",
+            "Barbados",
+            "Jamaica"
+        ]
+    },
+
 ]
 setNo();
 
