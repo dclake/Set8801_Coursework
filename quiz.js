@@ -226,7 +226,6 @@ let questions = [{
 ]
 
 setupQuiz();
-// setNo();
 function startQuiz() {
     let name = document.getElementById("name").value;
     if (name == "") {
@@ -235,10 +234,6 @@ function startQuiz() {
         if (question_count < 1) {
             alert("You must select a level!")
         } else {
-            setCookie(name, 365)
-            // if name = 
-            // document.cookie = name;
-            console.log(name);
             hideStart();
             setNo();
         }
@@ -256,11 +251,6 @@ function setupQuiz() {
     hideResultButtons();
     hideNextButton();
     div_header.innerHTML = "Quiz Setup";
-    // play.onlick = function(){
-    //     console.log("Start Quiz");
-    //     // hideStart();
-    //     // setNo();
-    // }
     div_easy.onclick = function () {
         question_count = 3;
         console.log("Easy");
@@ -437,6 +427,7 @@ function clearExplanation() {
 }
 
 function showResults() {
+    div_header.style.display = "inline";
     div_header.innerHTML = "Results";
     clearBox();
     calculateScore();
@@ -477,26 +468,21 @@ function clearBox() {
     div_choice_text.style.display = "none";
     div_question_number.innerHTML = "";
     div_question_text.innerHTML = "";
-    // div_choice_text.innerHTML = "";
     clearExplanation();
 }
 
 function hideResultButtons() {
-    // div_review.style.visibility = "hidden";
-    // div_again.style.visibility = "hidden";
-    // div_home.style.visibility = "hidden";
     div_review.style.display = "none";
     div_again.style.display = "none";
     div_home.style.display = "none";
 }
 
 function showResultButtons() {
-    // div_review.style.visibility = "visible"
-    // div_again.style.visibility = "visible";
-    // div_home.style.visibility = "visible";
     div_review.style.display = "inline";
     div_again.style.display = "inline";
     div_home.style.display = "inline";
+    div_header.style.display = "inline";
+
 }
 
 function hideNextButton() {
@@ -507,6 +493,8 @@ function hideNextButton() {
 function showNextButton() {
     div_next.style.visibility = "visible";
     div_next.style.display = "inline"
+    div_header.style.display = "none";
+
 }
 
 function hideStart() {
