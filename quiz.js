@@ -196,6 +196,31 @@ let questions = [{
             "29 September 1973",
             "18 December 1962"
         ]
+    },  {
+        id: 14,
+        question: "Who was the first group of people to settle in St.Lucia?",
+        answer: 4,
+        explanation: "St. Lucia was first settled by Arawak Amerindians around 200 A.D., though by 800 their culture had been superseded by that of the Caribs. ",
+        readMore: "http://www.geographia.com/st-lucia/lchis01.htm",
+        choices: [
+            "Europeans",
+            "Africans",
+            "Chinese",
+            "Amerindians"
+        ]
+    },
+    {
+        id: 15,
+        question: "St Lucia's original inhabitants called their land?",
+        answer: 3,
+        explanation: " There is evidence to suggest that these first inhabitants called the island Iouanalao, which meant 'Land of the Iguanas', due to the island's high number of iguanas.",
+        readMore: "https://en.wikipedia.org/wiki/History_of_Saint_Lucia#Pre-colonial_period",
+        choices: [
+            "Party Land",
+            "Carinage",
+            "Iyanola",
+            "Sansunson"
+        ]
     },
 
 ]
