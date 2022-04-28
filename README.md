@@ -9,6 +9,7 @@ Saint Lucia and use a quiz to accomplish this aim. The website is therefore aime
 at tourists and visitors to the island. It may be later extended to encourage travel to the
 island by offering promotions or coupons to high-scoring visitors but will also be marketed
 to locals to promote national pride.  
+
 I have imagined an interactive learning experience where users are presented with multiplechoice
 questions and are given immediate feedback with the opportunity to learn more about the topic presented in the question.
 
