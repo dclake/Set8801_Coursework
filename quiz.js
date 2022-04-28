@@ -234,18 +234,41 @@ function startQuiz() {
         if (question_count < 1) {
             alert("You must select a level!")
         } else {
+            setNameCookie(name,1);
+            // localStorage.setItem("player_name",name);
+            savePlayer(name,question_count);
             hideStart();
             setNo();
         }
     }
 }
 
-function setCookie(cname, exdays) {
+function setNameCookie(name,exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
-    document.cookie = cname + ";" + expires + ";path=/";
+    document.cookie = name + ";" + expires + ";path=/";
+    // document.cookie = pname + "=" + value + ";" + expires + ";path=/";
+    // document.cookie = question_count + ";" + expires + ";path=/";
 }
+function savePlayer(name,question_count){
+    localStorage.setItem("player_name",name);
+    localStorage.setItem("question_count",question_count);
+}
+function getCookie(cname) {
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
 function setupQuiz() {
     hideResultButtons();
@@ -419,11 +442,16 @@ function checkAnswer() {
         document.querySelector(buttonClicked).style.backgroundColor = "red"
     }
     div_explanation.innerHTML = explanation;
+    showExplanation();
 }
 
 function clearExplanation() {
-    div_explanation.style.visibility = "hidden";
+    // div_explanation.style.visibility = "hidden";
     div_explanation.style.display = "none";
+}
+function showExplanation() {
+    // div_explanation.style.visibility = "visible";
+    div_explanation.style.display = "inline";
 }
 
 function showResults() {
@@ -451,6 +479,7 @@ function calculateScore() {
 
 function checkWin() {
     let name = document.cookie;
+    // let name = localStorage.getItem(player_name);
     if (score_percentage > passing_score) {
         result_text = "Congrats " + name + "!" + "<br>" + "You really know Saint Lucia!" +
             "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
@@ -500,4 +529,40 @@ function showNextButton() {
 function hideStart() {
     div_setup.style.visibility = "hidden";
     div_setup.style.display = "none";
+}
+function reviewQuestions(){
+    let data_number = 1;
+    let question_text ="";
+    let question_string = "";
+    let answer_text = "";
+    var answer = 0;
+
+    hideResultButtons();
+    div_header.innerHTML = "Reveiw Questions";
+    div_home.style.display = "inline";
+    // div_results.visibility = "hidden";
+    // div_results.style.display = "none";
+    for (let question_num = 0; question_num < question_count; question_num++) {
+        question_text = '<p>' + data_number + '. '+
+            questions[question_num].question + '<br>';
+        answer =  questions[question_num].answer;   
+        // console.log("Ans = "+answer);
+        answer_text = "Answer: " + questions[question_num].choices[answer -1] + "<br>";
+        var explanation_text = questions[question_num].explanation + " ";
+        var linkText = questions[question_num].readMore;
+        var readMoreLink = "<a href='" + linkText + "' target='_blank'>Read More</a></p>";
+
+        // console.log("Ans: "+ answer_text);
+            // console.log(question_text);
+        question_string +=question_text + answer_text + explanation_text + readMoreLink;
+        console.log(question_string);
+            div_results.innerHTML += question_text;
+
+        // div_choice_text.style.backgroundColor = "white";
+        // div_choice_text.innerHTML += choice_text;
+        data_number++;
+    }
+    div_results.innerHTML = question_string;
+
+
 }
