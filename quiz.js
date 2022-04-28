@@ -26,12 +26,12 @@ var div_next = document.getElementById("next");
 var div_review = document.getElementById("review");
 var div_again = document.getElementById("again");
 var div_home = document.getElementById("home");
-div_choice-container = document.getElementById("choice-container");
+var div_choice_container = document.getElementById("choice-container");
 
 // Question set
 let questions = [{
         id: 1,
-        question: "Saint Lucia is a ________?",
+        question: "Saint Lucia is a what?",
         answer: 2,
         explanation: "Saint Lucia is a fertile island country in the Caribbean Sea. Its closest neighbours are the islands of Martinique, to the north, and Saint Vincent, to the south-west.",
         readMore: "https://thecommonwealth.org/our-member-countries/saint-lucia#:~:text=Saint%20Lucia%20is%20a%20fertile,rivers%20and%20boiling%20sulphur%20springs.",
@@ -83,7 +83,7 @@ let questions = [{
     },
     {
         id: 5,
-        question: " _____ serves as a second language of many Saint Lucians.",
+        question: " What serves as a second language of many Saint Lucians.",
         answer: 3,
         explanation: "Saint Lucian Creole French (Kwéyol), also known as Patois, is a French-speaking dialect of Saint Lucia. ",
         readMore: "https://www.worldatlas.com/articles/what-languages-are-spoken-in-saint-lucia.html",
@@ -488,6 +488,7 @@ function checkWin() {
         result_text = "Sorry " + name + "!" + "<br>" + "You need to learn more about Saint Lucia!" +
             "<p>You got " + score + "/" + question_count + "<br>" + score_percentage + "%</p>";
     }
+    div_choice_container.style.display = "none";
     div_results.innerHTML = result_text;
     hideNextButton();
     showResultButtons();
@@ -544,16 +545,17 @@ function reviewQuestions(){
     div_results.visibility = "hidden";
     div_results.style.display = "none";
     div_explanation.style = "inline";
+    div_choice_container.style.display = "none";
     for (let question_num = 0; question_num < question_count; question_num++) {
-        question_text = '<p>' + data_number + '. '+
+        question_text = '<p> <strong>' + data_number + '. </strong>'+
             questions[question_num].question + '<br>';
         answer =  questions[question_num].answer;   
         answer_text = "Answer: " + questions[question_num].choices[answer -1] + "<br>";
-        var explanation_text = questions[question_num].explanation + " ";
+        var explanation_text = "Explanation: " + questions[question_num].explanation + " ";
         var linkText = questions[question_num].readMore;
         var readMoreLink = "<a href='" + linkText + "' target='_blank'>Read More</a></p>";
         question_string +=question_text + answer_text + explanation_text + readMoreLink;
-        console.log(question_string);
+        // console.log(question_string);
         data_number++;
     }
     div_explanation.innerHTML = question_string;
