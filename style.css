@@ -168,13 +168,9 @@ th, td {
   background-color: red;
 }
 .explanation {
-
-  margin-top: 20px;
-  margin-bottom: 20px;
-
+  padding: 0 10% 0%;
+  text-align:justify;
   justify-content: left;
-  align-items: center;
-  vertical-align: middle;
 }
 .quiz-buttons{
   /* display: flex; */

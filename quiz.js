@@ -26,6 +26,7 @@ var div_next = document.getElementById("next");
 var div_review = document.getElementById("review");
 var div_again = document.getElementById("again");
 var div_home = document.getElementById("home");
+div_choice-container = document.getElementById("choice-container");
 
 // Question set
 let questions = [{
@@ -540,29 +541,22 @@ function reviewQuestions(){
     hideResultButtons();
     div_header.innerHTML = "Reveiw Questions";
     div_home.style.display = "inline";
-    // div_results.visibility = "hidden";
-    // div_results.style.display = "none";
+    div_results.visibility = "hidden";
+    div_results.style.display = "none";
+    div_explanation.style = "inline";
     for (let question_num = 0; question_num < question_count; question_num++) {
         question_text = '<p>' + data_number + '. '+
             questions[question_num].question + '<br>';
         answer =  questions[question_num].answer;   
-        // console.log("Ans = "+answer);
         answer_text = "Answer: " + questions[question_num].choices[answer -1] + "<br>";
         var explanation_text = questions[question_num].explanation + " ";
         var linkText = questions[question_num].readMore;
         var readMoreLink = "<a href='" + linkText + "' target='_blank'>Read More</a></p>";
-
-        // console.log("Ans: "+ answer_text);
-            // console.log(question_text);
         question_string +=question_text + answer_text + explanation_text + readMoreLink;
         console.log(question_string);
-            div_results.innerHTML += question_text;
-
-        // div_choice_text.style.backgroundColor = "white";
-        // div_choice_text.innerHTML += choice_text;
         data_number++;
     }
-    div_results.innerHTML = question_string;
+    div_explanation.innerHTML = question_string;
 
 
 }

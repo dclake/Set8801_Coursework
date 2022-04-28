@@ -21,7 +21,7 @@
     <div id="question_text" class="question_text"></div>
 
 
-    <div class="choice-container">
+    <div id="choice-container" class="choice-container">
       <div id="setup">
         <h3>Name</h3>
         <input class="input-text" type="text" id="name" name="name">
@@ -40,8 +40,9 @@
         <button onclick="startQuiz()" class="button">Start Quiz</button>
       </div>
       <div id="choice_text"></div>
-      <div id="explanation" class="explanation"></div>
+      <!-- <div id="explanation" class="explanation"></div> -->
     </div>
+    <div id="explanation" class="explanation"></div>
     <div class="button_container">
       <button id="next" class="button">Next</button>
       <button id="review" onclick="reviewQuestions()" class="button">Review Questions</button>
