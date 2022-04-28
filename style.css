@@ -30,6 +30,16 @@ h1 {
   font-size: 3rem;
   text-shadow: 2px 2px 4px #000000;
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 .main {
   text-align: center;
   display: flex;
